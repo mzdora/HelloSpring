@@ -5,6 +5,9 @@
 子项目都是由maven创建的
 ```
 git clone https://github.com/mzdora/HelloSpring.git
+```
+## 运行
+```
 mvnw spring-boot:run
 ```
 
