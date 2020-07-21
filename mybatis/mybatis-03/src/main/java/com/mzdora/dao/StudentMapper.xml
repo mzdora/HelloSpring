@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mzdora.dao.StudentMapper">
+    <select id="getStudents" resultMap="TeacherLuo">
+        SELECT a.id id,a.name studentname,b.name teachername FROM student as a,teacher as b WHERE a.tid = b.id;
+    </select>
+    <resultMap id="TeacherLuo" type="com.mzdora.pojo.student">
+        <result property="id" column="id"/>
+        <result property="name" column="studentname"/>
+        <association property="teacher" column="teachername">
+            <result property="name" column="teachername" javaType="String"/>
+        </association>
+    </resultMap>
+</mapper>

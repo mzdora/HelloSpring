@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mzdora.dao.UserMapper">
+    <resultMap id="map" type="user">
+        <result column="pwd" property="password"/>
+    </resultMap>
+    <select id="getUserByLimit" resultMap="map" parameterType="map">
+        select * from user limit #{start},#{fifpage};
+    </select>
+    <select id="getUserList" resultMap="map">
+        select * from user;
+    </select>
+    <select id="getUserById" resultType="user" parameterType="int">
+        select * from user where id = #{id};
+    </select>
+    <update id="changeUserById" parameterType="user">
+        update user set name = #{name},pwd = #{pwd} where id = #{id};
+    </update>
+    <insert id="addUser" parameterType="user">
+        insert into user (id,name,pwd) values (#{id},#{name},#{pwd});
+    </insert>
+    <delete id="removeUserById" parameterType="int">
+        delete from user where id = #{id};
+    </delete>
+</mapper>
