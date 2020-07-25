@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user" class="com.mzdora.pojo.User">
+        <property name="id" value="1"/>
+        <property name="name" value="LuoSiwei"/>
+    </bean>
+    <bean id="blackCat" class="com.mzdora.pojo.BlackCat"/>
+    <bean id="WhileCat" class="com.mzdora.pojo.WhileCat"/>
+    <bean id="Cat" class="com.mzdora.pojo.CatSelecter">
+        <property name="cat" ref="WhileCat"/>
+    </bean>
+
+</beans>

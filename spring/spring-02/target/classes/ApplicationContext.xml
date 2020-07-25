@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="address" class="com.mzdora.pojo.Address">
+        <property name="address" value="匈牙利布达佩斯"/>
+    </bean>
+    <bean id="Student" class="com.mzdora.pojo.Student">
+        <property name="name" value="罗驷维"/>
+        <property name="address" ref="address"/>
+        <property name="age" value="21"/>
+        <property name="books">
+            <array>
+                <value>西西弗斯神话</value>
+                <value>局外人</value>
+            </array>
+        </property>
+        <property name="card">
+            <map>
+                <entry value="罗兰大学一卡通" key="学生卡"/>
+                <entry value="罗兰大学饭堂" key="饭卡"/>
+            </map>
+        </property>
+        <property name="games">
+            <set>
+                <value>英雄联盟</value>
+                <value>星际争霸2</value>
+            </set>
+        </property>
+        <property name="girlFriend" value="王琢"/>
+        <property name="hobbies">
+            <list>
+                <value>唱跳</value>
+                <value>RAP</value>
+                <value>篮球</value>
+            </list>
+        </property>
+    </bean>
+
+</beans>
